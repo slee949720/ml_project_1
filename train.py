@@ -64,13 +64,8 @@ def main():
     # "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
     #ds = ### YOUR CODE HERE ###
-    #ds = TabularDatasetFactory.get_tabular_dataset().to_pandas_dataframe().dropna()
     url_path = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
-    #ds = Dataset.File.from_files(path=url_paths)
-    #ds = Dataset.Tabular.from_delimited_files(path=url_path)
     ds = TabularDatasetFactory.from_delimited_files(path=url_path)
-
-    #data_df = ds.to_pandas_dataframe()
 
     x, y = clean_data(ds)
 
